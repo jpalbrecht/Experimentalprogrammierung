@@ -1,0 +1,46 @@
+%----------------------------------------------------------------------------
+%        MAIN FILE TO EDIT
+%        This is the only file that demands any changes!!!
+%----------------------------------------------------------------------------
+fprintf('............ Setting basic parameters according to \n')
+fprintf('............            MODIFYME.M\n'); fprintf('............ \n')
+
+doinstr     = 1;  % 0: no instructions
+                  % 1: instructions (set training = 1) 
+training    = 1;  % 0: main experimental session, 1: training session (set doinstr = 1)
+                  % ALWAYS set both 0 or both 1 to do instructions and
+                  % training, consecutively!!!
+set         = 2;  % chose set 1 or 2, needs to be counterbalanced across subjects!!  
+day         = 1;  % first or second testing - only for file saving - no change experimental parameters 
+
+%----------------------------------------------------------------------------
+%        Participant information 
+%--------------------------------------------------------------------------
+payment = 1;      % is this subject being paid / should payment info be displayed
+                  % at the end? 
+type = 'TEST';      % 'C' for control condition, and 'S' stress intervention 
+
+subjn = '01';   % Subject Number. Aufsteigend, forlaufend 
+
+%----------------------------------------------------------------------------
+%        To save or not to save
+%        This should ALWAYS be set to 1 when doing experiments obviously
+%----------------------------------------------------------------------------
+dosave = 1;      % save output? 
+
+%----------------------------------------------------------------------------
+%        If set doscanner=1 exp will wait for the first trigger 
+%        of the MR scanner and keys are different
+%        If set doscanner=0, then do training + instructions 
+%----------------------------------------------------------------------------
+doscanner = 0; % 0: outside scanner 
+               % 1: inside the scanner 
+               % ALWAYS set to 0! NO scanning in STRESS study
+
+%----------------------------------------------------------------------------
+%        EXPERIMENT VERSION 
+%			PLEASE check this is correct! 
+%----------------------------------------------------------------------------
+expversion = 'fMRI-f20-120823_STRESS_210513';
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+debug       = 0;

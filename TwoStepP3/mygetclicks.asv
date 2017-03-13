@@ -1,0 +1,47 @@
+buttons=[0 0 0 0];
+while ~any(buttons);[x,y,buttons]=GetMouse;end
+while  any(buttons);[x,y,buttons]=GetMouse;end
+  
+
+% Test if any mouse button is pressed. 
+  if any(buttons)
+    fprintf('Someone''s pressing a button.\n');
+  end
+  
+  % Test if the first mouse button is pressed.
+  if buttons(1)
+    fprintf('Someone''s pressing the first button!\n');
+  end
+ 
+  % Test if the second mouse button is pressed.
+  if length(buttons)>=2 && buttons(2)
+    fprintf('Someone''s pressing the second button!\n');
+  end
+ 
+  length(buttons)   tells you how many buttons there are on your mouse.
+ 
+  The cursor position (x,y) is "local", i.e. relative to the origin of
+  the window or screen, if supplied. Otherwise it's "global", i.e. relative
+  to the origin of the main screen (the one with the menu bar).
+  
+  NOTE: If you use GetMouse to wait for clicks, don't forget to wait
+  for the user to release the mouse button, ending the current click, before
+  you begin waiting for the next mouse press.
+ 
+  Alternatively, you can also use the GetClicks() function to wait for
+  mouse-clicks and return the mouse position of first click and the number
+  of mouse button clicks.
+ 
+  fprintf('Please click the mouse now.\n');
+  [x,y,buttons] = GetMouse;
+  while any(buttons) % if already down, wait for release
+  	[x,y,buttons] = GetMouse;
+  end
+  while ~any(buttons) % wait for press
+  	[x,y,buttons] = GetMouse;
+  end
+  while any(buttons) % wait for release
+  	[x,y,buttons] = GetMouse;
+  end
+  fprintf('You clicked! Thanks.\n');
+  
